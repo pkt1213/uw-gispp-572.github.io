@@ -1,0 +1,34 @@
+Name
+Address
+Phone Number
+email
+Birthday (n/a)
+Initation Year(n/a)
+Initation Chapter (n/a)
+Spouse (n/a)
+Postion(drop down)
+ P, VP Rit, VP Membership, Tresur, Editor, Recording Sec, Corrisponding Sec, Social Chairman, Service Chair, Scolarship Chair, Honor Chair 
+Membership Status (dropdown)
+ Active, Inactive
+Drives
+ Yes, No
+
+Remove male/female
+
+
+              <div><label>Age:&nbsp</label><input placeholder="Your age" name="age"></div>
+              <div><label>Blood Type:</label>
+                <select name="blood_type">
+                  <option value="">Choose your blood type</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="O">O</option>
+                  <option value="AB">AB</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+Date:
+https://itsolutionstuff.com/post/bootstrap-year-picker-example-using-datepicker-jsexample.html
+https://html5tutorial.info/html5-date.php
+https://stackoverflow.com/questions/5620996/is-there-a-jquery-dropdown-year-selector

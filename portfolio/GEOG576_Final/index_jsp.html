@@ -1,0 +1,121 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Web Project</title>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap - year picker only example -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+
+  <!--Google Map js libraries-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMQ2qke4SNr_CnORn7QkeUzCPFv11VIac&libraries=geometry,places"></script> 
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand">SAI Member Portal</a>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="sidebar col-xs-3">
+       
+        <!-- Tab Navis-->
+        <ul class="nav nav-tabs">
+          <li><a href="#create_event" data-toggle="tab">Event</a></li>
+          <li class="active"><a href="#create_member" data-toggle="tab">Create Member</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content ">
+          <!-- Create New Member Tab Panel -->
+          <div class="tab-pane active" id="create_member">
+            <form id = "create_report_form">
+              <div><label>First Name:&nbsp</label><input placeholder="First name" name="fN"></div>
+              <div><label>Last Name:&nbsp</label><input placeholder="Last name" name="lN"></div>
+              <div><label>Telephone:&nbsp</label><input placeholder="Telephone number" name="tel"></div>
+              <div><label>Email:&nbsp</label><input placeholder="Email address" name="email"></div>
+              <div><label>Address:</label>
+                <input id="autocomplete" placeholder="Address" >
+              </div>
+              <div><label>Birthdate:&nbsp</label>
+                <input class="date-own form-control" style="width: 200px;" type="text">
+                  <script type="text/javascript">
+                    $('.date-own').datepicker({
+                      minViewMode: 0,
+                      format: 'MM dd, yyyy'
+                     });
+                  </script>
+                  </script></div>
+              <div><label>Initation Year:&nbsp</label>
+                <input class="date-own form-control" style="width: 200px;" type="text">
+                  <script type="text/javascript">
+                    $('.date-own').datepicker({
+                      minViewMode: 2,
+                      format: 'yyyy'
+                     });
+                  </script>
+                  </script></div>
+              <div><label>Initation Chapter:&nbsp</label><input placeholder="Initation Chapter" name="int_chap"></div>
+              <div><label>Spouse's Name:&nbsp</label><input placeholder="Member's spouse" name="spouse_N"></div>
+              <div><label>Position:</label>
+                <select onchange="onSelectReportType(this)" name="report_type">
+                  <option value="Member">Member</option>
+                  <option value ="President">President</option>
+                  <option value ="VP Membership">VP Membership</option>
+                  <option value ="VP Ritual">VP Ritual</option>
+                  <option value ="Treasurer">Treasurer</option>
+                  <option value ="Editor">Editor</option>
+                  <option value ="Recording Secretary">Recording Secretary</option>
+                  <option value ="Corresponding Secretary">Corresponding Secretary</option>
+                  <option value ="Social Chair">Social Chair</option>
+                  <option value ="Service Chair">Service Chair</option>
+                  <option value ="Scholarship Chair">Scholarship Chair</option>
+                  <option value ="Honor Chair">Honor Chair</option>
+                </select>
+              </div>
+              <div><label>Membership Status:&nbsp</label></div>
+                <label><input type="radio" name="is_active" value="t">&nbspActive</label>
+                <label><input type="radio" name="is_active" value="f">&nbspInactive</label>
+              </div>
+              <div><label>Member Drives:&nbsp</label></div>
+                <label><input type="radio" name="drives" value="t">&nbspDrives</label>
+                <label><input type="radio" name="drives" value="f">&nbspDoes Not Drive</label>
+              </div>
+
+              <div><label>Comment:&nbsp</label><input placeholder="Additional message" name="message"></div>
+              <button type="submit" class="btn btn-default" id="report_submit_btn">
+                <span class="glyphicon glyphicon-star"></span> Submit
+              </button>
+            </form>
+          </div>    
+        </div>
+      </div>
+
+      <div id="map-canvas" class="col-xs-9"></div>
+
+    </div>
+  </div>
+
+  <script src="js/loadform.js"></script>
+  <script src="js/loadmap.js"></script>
+
+</body>
+</html>
